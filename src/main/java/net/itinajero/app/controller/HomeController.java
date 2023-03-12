@@ -21,9 +21,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {
 
-		
-		
-		
 		List<Pelicula> peliculas = getLista();
 //		peliculas.add("Rapido y furioso");
 //		peliculas.add("El aro 2");
@@ -90,11 +87,22 @@ public class HomeController {
 			pelicula4.setImagen("kong.png"); // Nombre del archivo de imagen
 			pelicula4.setEstatus("Inactiva"); // Esta pelicula estara inactiva
 			
+			Pelicula pelicula5 = new Pelicula();
+			pelicula5.setId(5);
+			pelicula5.setTitulo("Life: Vida Inteligente");
+			pelicula5.setDuracion(104);
+			pelicula5.setClasificacion("B");
+			pelicula5.setGenero("Drama");
+			pelicula5.setFechaEstreno(formatter.parse("10-06-2017"));
+			pelicula5.setImagen("estreno5.png"); // Nombre del archivo de imagen
+			pelicula5.setEstatus("Activa"); // Esta pelicula estara inactiva
+			
 			// Agregamos los objetos Pelicula a la lista
 			lista.add(pelicula1);
 			lista.add(pelicula2);
 			lista.add(pelicula3);
 			lista.add(pelicula4);
+			lista.add(pelicula5);
 
 			return lista;
 		} catch (ParseException e) {
