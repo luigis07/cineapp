@@ -12,6 +12,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a href="${urlRoot}peliculas/index" class="nav-link" href="#">Peliculas</a></li>
+				<li class="nav-item"><a href="${urlRoot}banners/index" class="nav-link" href="#">Banners</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Acerca</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
 			</ul>

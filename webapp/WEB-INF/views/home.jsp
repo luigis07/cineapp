@@ -35,25 +35,52 @@
      <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	    <li data-target="#myCarousel" data-slide-to="1"></li>
-	    <li data-target="#myCarousel" data-slide-to="2"></li>
-	    <li data-target="#myCarousel" data-slide-to="3"></li>
+<!-- 	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li> -->
+<!-- 	    <li data-target="#myCarousel" data-slide-to="1"></li> -->
+<!-- 	    <li data-target="#myCarousel" data-slide-to="2"></li> -->
+<!-- 	    <li data-target="#myCarousel" data-slide-to="3"></li> -->
+
+		<c:forEach items="${banners}" var="banner" varStatus="loop">
+            <c:choose>
+                <c:when test="${loop.index == 0}">
+                    <li data-target="#myCarousel" data-slide-to="${loop.index}" class="active"></li>
+                </c:when>
+                <c:otherwise>
+                    <li data-target="#myCarousel" data-slide-to="${loop.index}"></li>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
 	  </ol>
 	  <div class="carousel-inner">
-	    <div class="carousel-item active">
-	      <img class="d-block w-100" src="${urlPublic}/images/slide1.jpg" alt="Slide" title="Some text">
-	    </div>
-	    <div class="carousel-item">
-	      <img class="d-block w-100" src="${urlPublic}/images/slide2.jpg" alt="Slide" title="Some text">
-	    </div>
-	    <div class="carousel-item">
-	      <img class="d-block w-100" src="${urlPublic}/images/slide3.jpg" alt="Slide" title="Some text">
-	    </div>
-	    <div class="carousel-item">
-	      <img class="d-block w-100" src="${urlPublic}/images/slide4.jpg" alt="Slide" title="Some text">
-	    </div>
+<!-- 	    <div class="carousel-item active"> -->
+<%-- 	      <img class="d-block w-100" src="${urlPublic}/images/slide1.jpg" alt="Slide" title="Some text"> --%>
+<!-- 	    </div> -->
+<!-- 	    <div class="carousel-item"> -->
+<%-- 	      <img class="d-block w-100" src="${urlPublic}/images/slide2.jpg" alt="Slide" title="Some text"> --%>
+<!-- 	    </div> -->
+<!-- 	    <div class="carousel-item"> -->
+<%-- 	      <img class="d-block w-100" src="${urlPublic}/images/slide3.jpg" alt="Slide" title="Some text"> --%>
+<!-- 	    </div> -->
+<!-- 	    <div class="carousel-item"> -->
+<%-- 	      <img class="d-block w-100" src="${urlPublic}/images/slide4.jpg" alt="Slide" title="Some text"> --%>
+<!-- 	    </div> -->
+
+		 <c:forEach items="${banners}" var="banner" varStatus="loop">
+             <c:choose>
+                 <c:when test="${loop.index == 0}">
+                     <div class="carousel-item active">
+                         <img class="d-block w-100" src="${urlPublic}/images/${banner.archivo}" alt="${banner.titulo}" title="${banner.titulo}">
+                     </div>
+                 </c:when>
+                 <c:otherwise>
+                     <div class="carousel-item">
+                         <img class="d-block w-100" src="${urlPublic}/images/${banner.archivo}" alt="${banner.titulo}" title="${banner.titulo}">
+                     </div>
+                 </c:otherwise>
+             </c:choose>
+         </c:forEach>
 	  </div>
+	  
 	  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
 	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 	    <span class="sr-only">Previous</span>
