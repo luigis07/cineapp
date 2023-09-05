@@ -6,12 +6,26 @@ public class Pelicula {
 
 	private int id;
 	private String titulo;
-	private int duracion;
-	private String clasificacion;
+	private int duracion = 100;
+	private String clasificacion = "A";
 	private String genero;
 	private String imagen = "cinema.png"; // imagen por default
 	private Date fechaEstreno;
 	private String estatus = "Activa";
+
+	private Detalle detalle;
+
+	public Pelicula() {
+
+	}
+
+	public Detalle getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(Detalle detalle) {
+		this.detalle = detalle;
+	}
 
 	public int getId() {
 		return id;
@@ -81,7 +95,7 @@ public class Pelicula {
 	public String toString() {
 		return "Pelicula [id=" + id + ", titulo=" + titulo + ", duracion=" + duracion + ", clasificacion="
 				+ clasificacion + ", genero=" + genero + ", imagen=" + imagen + ", fechaEstreno=" + fechaEstreno
-				+ ", estatus=" + estatus + "]";
+				+ ", estatus=" + estatus + ", detalle=" + detalle + "]";
 	}
 
 }

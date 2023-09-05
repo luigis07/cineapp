@@ -46,8 +46,8 @@
 							<div class="card-body">                           
 								<p>
 									Título Original : ${pelicula.titulo} <br>
-									Actores :  <br>
-									Director:  <br>                  
+									Actores : ${pelicula.detalle.actores} <br>
+									Director: ${pelicula.detalle.director} <br>                  
 									Clasificación: ${pelicula.clasificacion} <br>
 									Duración: ${pelicula.duracion} minutos <br>
 									Género: ${pelicula.genero} <br>
